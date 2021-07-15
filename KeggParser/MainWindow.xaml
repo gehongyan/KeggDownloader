@@ -1,0 +1,30 @@
+﻿<Window x:Class="KeggParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeggParser"
+        mc:Ignorable="d"
+        Title="KEGG解析工具 (20210715)" 
+        MinHeight="450" MinWidth="800">
+    <Grid>
+        <Grid x:Name="MainWindowGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" Grid.ColumnSpan="2" x:Name="UrlTextBox" Text="" TextWrapping="Wrap" Margin="5,5,5,5" />
+            <Button Grid.Row="1" Grid.Column="0" x:Name="ParseButton" Content="解析单页" Margin="5,5,5,5" Click="ParseButton_Click"  />
+            <Button Grid.Row="1" Grid.Column="1" x:Name="ParsePatchButton" Content="批量解析目录页中05200之前的数量前10多的页面" Margin="5,5,5,5" Click="ParsePatchButton_Click" />
+            <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ResultTextBox" Margin="5,5,5,5" TextWrapping="Wrap" HorizontalScrollBarVisibility="Hidden" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
